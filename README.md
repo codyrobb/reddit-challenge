@@ -8,7 +8,7 @@ The goal is to create a basic iOS application that lists reddit posts in a table
 
 Feel free to create the application whichever way you'd like. Feel free to use open source libraries.
 
-A simple ne
+A simple networking implementation has been provided. Here's an example of fetching a list of posts on the home page.
 
 ## Network Service Usage
 
