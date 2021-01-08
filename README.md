@@ -1,4 +1,4 @@
-# reddit-challenge
+# Reddit Code Challenge
 https://www.reddit.com is a website where users can submit content (via links or plain text) into a post. Other users can up vote or down vote the post. Posts are prioritized on the site based on their votes and are categorized into "subreddits", which allow users to browse related to a certain topic.
 
 The goal is to create a basic iOS application that lists reddit posts in a table view. 
