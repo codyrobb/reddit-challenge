@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 final class NetworkService {
 
     // MARK: -
@@ -41,6 +40,19 @@ final class NetworkService {
         }
 
         task?.resume()
+    }
+    
+    func execute(endpoint: Endpoint) async throws -> Page {
+        return try await withCheckedThrowingContinuation { continuation in
+            execute(endpoint: endpoint) { result in
+                switch result {
+                case .success(let value):
+                    continuation.resume(returning: value)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
     }
 
 }

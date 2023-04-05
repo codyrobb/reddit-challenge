@@ -12,6 +12,7 @@ A simple networking implementation has been provided. Here's an example of fetch
 
 ## Network Service Usage
 
+#### Using callbacks:
 ```swift
 let service = NetworkService()
 
@@ -22,5 +23,17 @@ service.execute(endpoint: .home) { result in
         case .failure:
             print("error!!!!")
     }
+}
+```
+
+#### Using async/await:
+```swift
+let service = NetworkService()
+
+do {
+    let posts = try await service.execute(endpoint: .home)
+    print(posts)
+} catch {
+    print("There was an error: \(error)")
 }
 ```
