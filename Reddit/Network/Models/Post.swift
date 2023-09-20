@@ -18,7 +18,7 @@ struct Post: Decodable, Equatable {
     let subreddit: String
 
     /// The URL the post lives at.
-    let url: URL
+    let url: URL?
 
 }
 
@@ -41,7 +41,7 @@ extension Post {
 
         title = try data.decode(String.self, forKey: .title)
         subreddit = try data.decode(String.self, forKey: .subreddit)
-        url = try data.decode(URL.self, forKey: .url)
+        url = try? data.decode(URL.self, forKey: .url)
     }
 
 }
